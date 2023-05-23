@@ -6,6 +6,7 @@
  */
 
 #include <stdio.h>
+#include <math.h>
 
 // Fungsi untuk memeriksa apakah suatu bilangan prima
 int isPrime(int num) {
@@ -62,7 +63,7 @@ void decryptMessage(int *encryptedData, int dataSize, int d, int n) {
 
         // Menggunakan algoritma eksponensiasi modular untuk mendekripsi
         for (int j = 0; j < d; j++) {
-            decryptedValue = (decryptedValue * c) % n;
+            decryptedValue = (decryptedValue ^ c) % n;
         }
 
         printf("%d ", decryptedValue);
